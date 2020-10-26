@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title>pre-alpha version</title>
+
+</head>
+<body>
+    <div class="noSelect">
+        <h1 id="heading">incremental baking game</h1>
+    </div>
+
+    <div id="sidebar">
+        <div class="sidebarButton"  id="farmBtn" onclick="showTab('farm')">farm</div>
+
+        <div class="sidebarButton" id="bakeryBtn" onclick="showTab('bakery')">bakery</div>
+        <div class="sidebarButton" id="marketplaceBtn" onclick="showTab('marketplace')">marketplace</div>
+        <div class="sidebarButton" id="staffBtn" onclick="showTab('staff')">staff</div>
+
+    </div>
+
+    <div id="farm" class="tab">
+        <div class="actionButton" onclick="harvestWheat(1)">harvest wheat</div>
+    </div>
+
+
+
+    <div id="bakery" class="tab">
+        <div class="actionButton" onclick="bakeBread(1)">bake bread
+            <div class="tooltip"><br>bake 1 bread from <i>20 wheat</i></div>
+        </div>
+
+    </div>
+
+
+
+    <div id="marketplace" class="tab">
+        <div class="actionButton" onclick="sellBread(1)">sell bread
+            <div class="tooltip"><br>+ 30 bucks</div>
+        </div>
+        <div class="actionButton" onclick="sellAllBread()">sell all bread
+            <div class="tooltip"><br> + 25 bucks per bread</div>
+        </div>
+    </div>
+
+
+
+    <div id="staff" class="tab">
+        <h2 class="tabHeading noSelect">hire</h2>
+        <div class="actionButton hire" onclick="hireFarmer(1)">farmer
+            <div class="tooltip"><p class="tooltipCost" id="farmerCost">10 bucks</p>
+                <br>
+                + 1 wheat per second
+            </div>
+        </div>
+        <div class="actionButton hire" onclick="hireBreadBaker(1)">bread baker
+            <div class="tooltip"><p class="tooltipCost" id="breadBakerCost">50 bucks</p>
+                <br>
+               bakes 1 bread every 3 seconds
+            </div>
+        </div>
+        <h2 class="tabHeading noSelect" style="padding-top: 30px">fire</h2>
+        <div class="actionButton fire" onclick="fireFarmer(1)">farmer
+            <div class="tooltip">
+                <br>
+                - 1 wheat per second
+            </div>
+        </div>
+        <div class="actionButton fire" onclick="fireBreadBaker(1)">bread baker
+            <div class="tooltip">
+
+
+                <br>
+                - 1 bread every 3 seconds
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <div class="noSelect" id="resources">
+        <section id="moneySection">
+            <h3 id="moneyHeader">Money</h3>
+
+            <p id="money" class="resource"></p>
+        </section>
+        <section class="close">
+            <p id="wheat" class="resource"></p>
+        </section>
+        <section class="close">
+            <p id="bread" class="resource"></p>
+        </section>
+        <section id="staffList">
+            <h3>Staff</h3>
+
+            <p id="farmers" class="resource"></p>
+            <p id="breadBakers" class="resource"></p>
+        </section>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="js/main.js"></script>
+<script src="js/technical/sidebar.js"></script>
+</body>
+</html>
